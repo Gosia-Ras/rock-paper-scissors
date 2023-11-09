@@ -32,10 +32,18 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerScore === 3) {
     gameResultsDisplay.textContent = "Congratulations! You win the game!";
+    disableButtons();
   } else if (computerScore === 3) {
     gameResultsDisplay.textContent =
       "Sorry, you lost the game. Better luck next time!";
+    disableButtons();
   }
+}
+
+function disableButtons() {
+  buttons.forEach((button) => {
+    button.disabled = true;
+  });
 }
 
 function game() {

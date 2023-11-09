@@ -33,8 +33,17 @@ h1 {
   background-color: #45a049;
 }
 
+.choice:disabled {
+  background-color: #304d32;
+}
+
 p {
   color: #333;
   font-size: 18px;
   margin-top: 20px;
+}
+
+p#gameResults {
+  font-size: 28px;
+  font-weight: 600;
 }
