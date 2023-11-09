@@ -6,19 +6,25 @@ function getComputerChoice(array) {
   return item;
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice(choices);
+let playerSelection = prompt("Pick rock, paper or scissors");
+let computerSelection = getComputerChoice(choices);
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === "rock" && computerSelection === "paper") {
-    console.log("Sorry, you lost!");
-  }
-  if (playerSelection === "rock" && computerSelection === "scissors") {
-    console.log("You've won!");
-  }
   if (playerSelection === computerSelection) {
     console.log("It's a tie!");
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    console.log("You've won!");
+  } else {
+    console.log("Sorry, you lost!");
   }
 }
 
-playRound(playerSelection, computerSelection);
+function game() {
+  playRound(playerSelection, computerSelection);
+}
+
+game();
